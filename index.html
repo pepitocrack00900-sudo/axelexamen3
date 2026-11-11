@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MercadoLearn | Aprende Mercadotecnia</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fc;
+    color: #263247;
+    line-height: 1.7;
+}
+
+/* ENCABEZADO */
+
+header {
+    background: #172554;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #60d5e8;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 8px 12px;
+}
+
+nav button:hover,
+nav button.activo {
+    color: #60d5e8;
+}
+
+/* PÁGINAS */
+
+.pagina {
+    display: none;
+    animation: aparecer .4s ease;
+}
+
+.pagina.activa {
+    display: block;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* PORTADA */
+
+.inicio {
+    background: linear-gradient(120deg, #172554, #2563a6);
+    color: white;
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.inicio h1 {
+    font-size: 46px;
+    margin-bottom: 20px;
+}
+
+.inicio span {
+    color: #60d5e8;
+}
+
+.inicio p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 18px;
+}
+
+.boton {
+    display: inline-block;
+    background: #60d5e8;
+    color: #172554;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background: white;
+}
+
+/* CONTENIDO */
+
+.contenido {
+    padding: 65px 10%;
+}
+
+.titulo {
+    text-align: center;
+    color: #172554;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 35px;
+    color: #64748b;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tarjeta {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.07);
+    text-align: center;
+}
+
+.tarjeta h3 {
+    color: #2563a6;
+    margin: 12px 0;
+}
+
+.icono {
+    font-size: 45px;
+}
+
+.bloque {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 25px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+}
+
+.bloque h2 {
+    color: #2563a6;
+    margin-bottom: 12px;
+}
+
+.bloque ul {
+    padding-left: 25px;
+}
+
+.bloque li {
+    margin-bottom: 8px;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer span {
+    color: #60d5e8;
+}
+
+/* CELULARES */
+
+@media(max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav button {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    .inicio {
+        padding: 65px 7%;
+    }
+
+    .inicio h1 {
+        font-size: 32px;
+    }
+
+    .contenido {
+        padding: 45px 7%;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ENCABEZADO -->
+
+<header>
+    <div class="logo">MercadoLearn.</div>
+
+    <nav>
+        <button class="activo" onclick="mostrarPagina('inicio', this)">Inicio</button>
+        <button onclick="mostrarPagina('nosotros', this)">Nosotros</button>
+        <button onclick="mostrarPagina('aprende', this)">Aprende</button>
+        <button onclick="mostrarPagina('estrategias', this)">Estrategias</button>
+        <button onclick="mostrarPagina('oportunidades', this)">Oportunidades</button>
+    </nav>
+</header>
+
+<!-- INICIO -->
+
+<div id="inicio" class="pagina activa">
+
+    <section class="inicio">
+        <h1>Descubre el mundo de la <span>Mercadotecnia</span></h1>
+
+        <p>
+            Aprende cómo las marcas conectan con las personas,
+            crean estrategias y hacen crecer sus negocios.
+            Conoce los conceptos básicos del marketing de una
+            manera sencilla y práctica.
+        </p>
+
+        <button class="boton" onclick="mostrarPagina('aprende')">
+            Comienza a aprender
+        </button>
+    </section>
+
+    <section class="contenido">
+        <h2 class="titulo">Bienvenido a MercadoLearn</h2>
+
+        <p class="descripcion">
+            Este espacio está creado para conocer y comprender
+            la mercadotecnia, sus herramientas y su importancia
+            en las empresas y en nuestra vida diaria.
+        </p>
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+                <div class="icono">📚</div>
+                <h3>Aprende</h3>
+                <p>Conoce los conceptos fundamentales de la mercadotecnia.</p>
+                <button class="boton" onclick="mostrarPagina('aprende')">Explorar</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono">📢</div>
+                <h3>Estrategias</h3>
+                <p>Descubre cómo las marcas promocionan sus productos.</p>
+                <button class="boton" onclick="mostrarPagina('estrategias')">Explorar</button>
+            </div>
+
+            <div class="tarjeta">
+                <div class="icono">💼</div>
+                <h3>Oportunidades</h3>
+                <p>Conoce las áreas profesionales relacionadas con el marketing.</p>
+                <button class="boton" onclick="mostrarPagina('oportunidades')">Explorar</button>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<!-- NOSOTROS -->
+
+<div id="nosotros" class="pagina">
+
+    <section class="inicio">
+        <h1>Sobre <span>nosotros</span></h1>
+        <p>Conoce nuestra identidad y lo que queremos lograr.</p>
+    </section>
+
+    <section class="contenido">
+
+        <div class="bloque">
+            <h2>¿Quiénes somos?</h2>
+            <p>
+                Somos MercadoLearn, un proyecto educativo creado
+                para compartir información sobre la mercadotecnia
+                y ayudar a los estudiantes a conocer mejor esta
+                materia. Buscamos explicar los temas de una manera
+                sencilla, interesante y fácil de comprender.
+            </p>
+        </div>
+
+        <div class="bloque">
+            <h2>Nuestra misión</h2>
+            <p>
+                Nuestra misión es proporcionar información útil
+                sobre la mercadotecnia, sus conceptos, herramientas
+                y estrategias para que los estudiantes puedan
+                aprender cómo funcionan las empresas y las marcas.
+            </p>
+        </div>
+
+        <div class="bloque">
+            <h2>Nuestra visión</h2>
+            <p>
+                Nuestra visión es convertirnos en un espacio de
+                aprendizaje donde más personas puedan descubrir
+                el mundo de los negocios, la publicidad y las
+                estrategias de marketing.
+            </p>
+        </div>
+
+        <div class="bloque">
+            <h2>Nuestro objetivo</h2>
+            <p>
+                Queremos que los visitantes comprendan la importancia
+                de conocer a los consumidores, desarrollar ideas
+                y crear estrategias que ayuden al crecimiento
+                de los negocios.
+            </p>
+        </div>
+
+    </section>
+</div>
+
+<!-- APRENDE -->
+
+<div id="aprende" class="pagina">
+
+    <section class="inicio">
+        <h1>Aprende sobre <span>Mercadotecnia</span></h1>
+        <p>Conoce los conceptos que ayudan a entender cómo funcionan los mercados.</p>
+    </section>
+
+    <section class="contenido">
+
+        <h2 class="titulo">Conceptos fundamentales</h2>
+
+        <div class="bloque">
+            <h2>¿Qué es la mercadotecnia?</h2>
+            <p>
+                Es el conjunto de actividades que realizan las empresas
+                para conocer las necesidades de los consumidores,
+                ofrecer productos o servicios y crear relaciones
+                con sus clientes.
+            </p>
+        </div>
+
+        <div class="bloque">
+            <h2>Investigación de mercado</h2>
+            <p>
+                Es un proceso que permite conocer los gustos,
+                necesidades y preferencias de los consumidores.
+                Se puede realizar mediante encuestas, entrevistas
+                y observación.
+            </p>
+        </div>
+
+        <div class="bloque">
+            <h2>Segmentación de mercado</h2>
+            <p>
+                Consiste en dividir a los consumidores en grupos
+                con características o necesidades similares.
+                Esto permite que las empresas dirijan mejor
+                sus productos y publicidad.
+            </p>
+        </div>
+
+        <div class="bloque">
+            <h2>Las 4 P de la mercadotecnia</h2>
+            <ul>
+                <li><strong>Producto:</strong> Lo que una empresa ofrece.</li>
+                <li><strong>Precio:</strong> La cantidad que paga el cliente.</li>
+                <li><strong>Plaza:</strong> El lugar o medio donde se vende.</li>
+                <li><strong>Promoción:</strong> La forma de darlo a conocer.</li>
+            </ul>
+        </div>
+
+        <div class="bloque">
+            <h2>Ejemplo práctico</h2>
+            <p>
+                Una empresa que vende tenis primero investiga qué
+                modelos prefieren sus clientes. Después establece
+                un precio, decide dónde venderlos y crea publicidad
+                para promocionarlos. Todo esto forma parte de la
+                mercadotecnia.
+            </p>
+        </div>
+
+    </section>
+</div>
+
+<!-- ESTRATEGIAS -->
+
+<div id="estrategias" class="pagina">
+
+    <section class="inicio">
+        <h1>Estrategias de <span>Marketing</span></h1>
+        <p>Descubre cómo las empresas promocionan sus productos y llegan a sus clientes.</p>
+    </section>
+
+    <section class="contenido">
+
+        <div class="bloque">
+            <h2>Marketing digital</h2>
+            <p>
+                Es el uso de internet y herramientas digitales
+                para promocionar productos y servicios. Incluye
+                redes sociales, páginas web, correo electrónico
+                y anuncios en línea.
+            </p>
+            <p><strong>Ejemplo:</strong> Una tienda publica sus productos en Instagram para llegar a más clientes.</p>
+        </div>
+
+        <div class="bloque">
+            <h2>Publicidad</h2>
+            <p>
+                Es una forma de comunicación que busca dar a
+                conocer una marca, producto o servicio para
+                llamar la atención de los consumidores.
+            </p>
+            <p><strong>Ejemplo:</strong> Un anuncio de televisión que presenta un nuevo teléfono celular.</p>
+        </div>
+
+        <div class="bloque">
+            <h2>Promociones de ventas</h2>
+            <p>
+                Son incentivos que buscan motivar a los consumidores
+                a realizar una compra, como descuentos, ofertas
+                y regalos.
+            </p>
+            <p><strong>Ejemplo:</strong> Una tienda ofrece un descuento del 20% durante una semana.</p>
+        </div>
+
+        <div class="bloque">
+            <h2>Marketing de contenidos</h2>
+            <p>
+                Consiste en crear contenido interesante y útil
+                para atraer a las personas y generar confianza
+                en una marca.
+            </p>
+            <p><strong>Ejemplo:</strong> Una marca de comida publica recetas y consejos de alimentación.</p>
+        </div>
+
+        <div class="bloque">
+            <h2>Importancia de las estrategias</h2>
+            <p>
+                Ayudan a las empresas a diferenciarse de la
+                competencia, conseguir nuevos clientes, aumentar
+                sus ventas y mantener una buena relación con
+                los consumidores.
+            </p>
+        </div>
+
+    </section>
+</div>
+
+<!-- OPORTUNIDADES -->
+
+<div id="oportunidades" class="pagina">
+
+    <section class="inicio">
+        <h1>Tu futuro en la <span>Mercadotecnia</span></h1>
+        <p>Descubre las diferentes áreas profesionales donde puedes aplicar tus conocimientos.</p>
+    </section>
+
+    <section class="contenido">
+
+        <div class="bloque">
+            <h2>Marketing digital</h2>
+            <p>
+                Se enfoca en crear campañas para internet,
+                administrar redes sociales, analizar resultados
+                y mejorar la presencia de las marcas en medios digitales.
+            </p>
+            <p><strong>Trabajos relacionados:</strong> Community manager, especialista en marketing digital y analista de redes sociales.</p>
+        </div>
+
+        <div class="bloque">
+            <h2>Publicidad y diseño</h2>
+            <p>
+                Esta área se dedica a desarrollar ideas creativas,
+                anuncios y materiales visuales para comunicar
+                los mensajes de las empresas.
+            </p>
+            <p><strong>Trabajos relacionados:</strong> Diseñador publicitario, creativo y encargado de campañas.</p>
+        </div>
+
+        <div class="bloque">
+            <h2>Administración de negocios</h2>
+            <p>
+                Se encarga de organizar recursos, planear
+                estrategias, coordinar proyectos y tomar
+                decisiones para mejorar los resultados
+                de una empresa.
+            </p>
+            <p><strong>Trabajos relacionados:</strong> Administrador, coordinador comercial y gerente de proyectos.</p>
+        </div>
+
+        <div class="bloque">
+            <h2>Ventas y comercio</h2>
+            <p>
+                Consiste en desarrollar relaciones con los clientes,
+                conocer sus necesidades y ofrecer productos
+                o servicios que puedan satisfacerlas.
+            </p>
+            <p><strong>Trabajos relacionados:</strong> Ejecutivo de ventas, asesor comercial y gerente de ventas.</p>
+        </div>
+
+        <div class="bloque">
+            <h2>Habilidades importantes</h2>
+            <ul>
+                <li>Creatividad para desarrollar ideas.</li>
+                <li>Comunicación para transmitir mensajes.</li>
+                <li>Organización para coordinar proyectos.</li>
+                <li>Trabajo en equipo para alcanzar objetivos.</li>
+                <li>Análisis para tomar buenas decisiones.</li>
+            </ul>
+        </div>
+
+    </section>
+</div>
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+    <h2>Mercado<span>Learn.</span></h2>
+    <p>Aprende, descubre y crea nuevas oportunidades.</p>
+    <p>Proyecto escolar de Programación B5B</p>
+    <p>© 2026 MercadoLearn. Todos los derechos reservados.</p>
+</footer>
+
+<!-- JAVASCRIPT PARA CAMBIAR DE APARTADO -->
+
+<script>
+
+function mostrarPagina(id, boton) {
+
+    // Ocultar todas las páginas
+    const paginas = document.querySelectorAll('.pagina');
+
+    paginas.forEach(function(pagina) {
+        pagina.classList.remove('activa');
+    });
+
+    // Mostrar la página seleccionada
+    document.getElementById(id).classList.add('activa');
+
+    // Quitar el color activo de los botones
+    const botones = document.querySelectorAll('nav button');
+
+    botones.forEach(function(b) {
+        b.classList.remove('activo');
+    });
+
+    // Marcar el botón seleccionado
+    if (boton) {
+        boton.classList.add('activo');
+    } else {
+        botones.forEach(function(b) {
+            if (b.getAttribute('onclick').includes("'" + id + "'")) {
+                b.classList.add('activo');
+            }
+        });
+    }
+
+    // Regresar al inicio de la pantalla
+    window.scrollTo(0, 0);
+}
+
+</script>
+
+</body>
+</html>
